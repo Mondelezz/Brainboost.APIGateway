@@ -1,5 +1,4 @@
 ﻿using API;
-using Ocelot.Middleware;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -10,7 +9,7 @@ Log.Information($"Starting application: {typeof(Program).Assembly.GetName().Name
 
 try
 {
-    var builder = WebApplication.CreateBuilder(args);
+    WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
     await builder
         .ConfigureServices()
